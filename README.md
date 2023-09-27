@@ -150,6 +150,32 @@ All future workspace launched will set the env vars for all bash terminals opene
 
 You can also set envars in the `.gitpod.yml` but this can only contain non-sensitive en vars
 
+### AWS CLI Install
+
+AWS CLI is installed for this project
+
+You need to set specific envars via the bash script. 
+
+['./bin/install_aws_cli'](./bin/install_aws_cli)
+
+We can check if our aws credentials are configured correctly by running this command:
+```sh
+aws sts get-caller-identity
+```
+
+if it is succesfull you should see a json payload return that looks like this:
+
+```json
+    "UserId": "XXXXXXXXXXXXXX",
+    "Account": "XXXXXXXXXXXXXX",
+    "Arn": "arn:aws:iam::XXXXXXXXXXXXXXXXX:user/name.example"
+```
+
+We need to generate AWS CLI credentials from iam user in order to user the aws CLI.
+
+[Getting starte AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
+[AWS CLI Envars](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
+
 ## External Reference
 
 - [Shebang Unix](https://en.wikipedia.org/wiki/Shebang_(Unix))

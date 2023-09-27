@@ -161,7 +161,7 @@ You need to set specific envars via the bash script.
 We can check if our aws credentials are configured correctly by running this command:
 ```sh
 aws sts get-caller-identity
-``
+```
 
 if it is succesfull you should see a json payload return that looks like this:
 

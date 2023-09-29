@@ -176,10 +176,57 @@ We need to generate AWS CLI credentials from iam user in order to user the aws C
 [Getting starte AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
 [AWS CLI Envars](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
 
-## External Reference
+## Terraform basiscs
 
-- [Shebang Unix](https://en.wikipedia.org/wiki/Shebang_(Unix))
-- [Install Terraform CLI](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
-- [Linux Os Version Command](https://www.cyberciti.biz/faq/how-to-check-os-version-in-linux-command-line/)
-- [Chmod](https://en.wikipedia.org/wiki/Chmod)
-- [Gitpod lifecycle](https://www.gitpod.io/docs/configure/workspaces/workspace-lifecycle)
+## Terraform registry
+
+Terraform soursces their are proiders and modeles form the terraform registory which locatted at the registery at terraform.io
+[Terraform registry](https://registry.terraform.io/)
+
+- **Provides** Is an interface to APIs that allow you to create resources in terraform.
+[Random Terraform provider](https://registry.terraform.io/providers/hashicorp/random/)
+- **Modules** are a way to make large amounts of terraform modular, portable and sharable. 
+
+## Terraform Console 
+
+We can see al list of all the terraform commands by typing 
+`terraform`
+
+#### Terraform init
+
+At the start of a new terraform project we will run 
+`terraform init` to download the binaries for the terraform providers that we will use for the project.
+
+#### Terraform Plan
+
+`terraform plan`
+This will generate a changeset about the state of our infrastructure and what will be changed
+
+We can output this changeset ie. "plan" to be passed to an apply, but often you can just ignore outputting.
+
+#### Terraform Apply
+
+`terraform apply`
+This will run a plan and pass the changeset to be executed by terraform. apply should prompt us yes or no. 
+
+If we want to be automated a apply we can use `terraform auto --approve`
+
+### Terraform lock Files
+
+`.terraform.lock.hcl` contains the locked versioning for the providers or modules that should be used with this project
+
+The terraform lock files **should be commited** to your Version Control System eg. Github
+
+### Terraform  state files
+
+`terraform.tfstate` contains info about the current state your infrastructure.
+**should not be commited** to your Version Control System eg. Github.
+
+This file can contain sensitive data. If you lose this file you lose knwing the state of your infrasturcture.
+
+`terraform.tfstate.backup` is the previous state file. files state,
+
+## Terraform directory
+
+``.terraform`` directory contains binaries of the terraform providers. 
+

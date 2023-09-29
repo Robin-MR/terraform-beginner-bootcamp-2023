@@ -230,3 +230,11 @@ This file can contain sensitive data. If you lose this file you lose knwing the 
 
 ``.terraform`` directory contains binaries of the terraform providers. 
 
+#### Terraform destroy
+
+`terraform destroy`
+This will destroy resources.
+
+`terraform apply auto-approve`
+To **skip** the approve prompt where you need to type yes
+

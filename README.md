@@ -238,3 +238,24 @@ This will destroy resources.
 `terraform apply auto-approve`
 To **skip** the approve prompt where you need to type yes
 
+## Issues with terraform cloud login and gitpod workspace
+
+When attempting to run `terraform login` it launch a bash wiswig to view the token. It does sometimes not work in Gitpod with VS Code.
+
+Create the file mannually here: 
+
+```sh
+touch /home/gitpod/.terraform.d/credentials.tfrc.json
+open /home/gitpod/.terraform.d/credentials.tfrc.json
+```
+provide the following code (replace your token in the file)
+
+```json
+{
+  "credentials": {
+    "app.terraform.io": {
+      "token": "our token code"
+    }
+  }
+}
+```
